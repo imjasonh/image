@@ -1,0 +1,5 @@
+apiVersion: image.example.dev/v1alpha1
+kind: Image
+metadata:
+  name: my-image
+spec: {}

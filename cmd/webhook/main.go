@@ -35,12 +35,12 @@ import (
 	"knative.dev/pkg/webhook/resourcesemantics/defaulting"
 	"knative.dev/pkg/webhook/resourcesemantics/validation"
 
-	"knative.dev/sample-controller/pkg/apis/samples/v1alpha1"
+	"github.com/imjasonh/image/pkg/apis/image/v1alpha1"
 )
 
 var types = map[schema.GroupVersionKind]resourcesemantics.GenericCRD{
 	// List the types to validate.
-	v1alpha1.SchemeGroupVersion.WithKind("AddressableService"): &v1alpha1.AddressableService{},
+	v1alpha1.SchemeGroupVersion.WithKind("Image"): &v1alpha1.Image{},
 }
 
 var callbacks = map[schema.GroupVersionKind]validation.Callback{}
