@@ -50,7 +50,7 @@ const (
 type ImageStatus struct {
 	duckv1.Status `json:",inline"`
 
-	Digest string `json:"digest"`
+	Digest string `json:"digest,omitempty"`
 }
 
 // ImageList is a list of Image resources
