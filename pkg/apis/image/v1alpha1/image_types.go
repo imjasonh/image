@@ -38,6 +38,8 @@ var (
 
 // ImageSpec holds the desired state of the Image (from the client).
 type ImageSpec struct {
+	// Ref is the image reference in the external regsitry.
+	Ref string `json:"ref"`
 }
 
 const (
@@ -50,6 +52,7 @@ const (
 type ImageStatus struct {
 	duckv1.Status `json:",inline"`
 
+	// +optional
 	Digest string `json:"digest,omitempty"`
 }
 

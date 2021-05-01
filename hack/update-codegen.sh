@@ -30,8 +30,10 @@ ${KNATIVE_CODEGEN_PKG}/hack/generate-knative.sh "injection" \
   "image:v1alpha1" \
   --go-header-file ${REPO_ROOT_DIR}/hack/boilerplate/boilerplate.go.txt
 
-group "Update deps post-codegen"
+group "Generate CRD definition"
+controller-gen crd paths=./pkg/apis/image/v1alpha1 output:crd:dir=config && mv config/image.example.dev_images.yaml config/300-image.yaml
 
+group "Update deps post-codegen"
 
 
 # Make sure our dependencies are up-to-date
